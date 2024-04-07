@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ege6snlvvlk"]
+
+[ext_resource type="PackedScene" uid="uid://l4ayxwhd831k" path="res://features/transition_node/objects/transition_node.tscn" id="1_q3puu"]
+
+[node name="transition_scene_01" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="transition_node" parent="." instance=ExtResource("1_q3puu")]
+
+[node name="color_rect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.176471, 0.227451, 1)
+
+[node name="margin_container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="box_container" type="BoxContainer" parent="margin_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="v_box_container" type="VBoxContainer" parent="margin_container/box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="button" type="Button" parent="margin_container/box_container/v_box_container"]
+custom_minimum_size = Vector2(154, 54)
+layout_mode = 2
+text = "Start"
+
+[node name="button2" type="Button" parent="margin_container/box_container/v_box_container"]
+custom_minimum_size = Vector2(154, 54)
+layout_mode = 2
+text = "Settings"
+
+[node name="button3" type="Button" parent="margin_container/box_container/v_box_container"]
+custom_minimum_size = Vector2(154, 54)
+layout_mode = 2
+text = "Exit"

@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://be6mrlg546ycy"]
+
+[ext_resource type="Script" path="res://features/transition_node/scripts/transition_scene_00.gd" id="1_nmhj5"]
+[ext_resource type="PackedScene" uid="uid://d0ege6snlvvlk" path="res://features/transition_node/scenes/transition_scene_01.tscn" id="2_kb2mh"]
+
+[node name="transition_scene_00" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmhj5")
+target_scene = ExtResource("2_kb2mh")
+
+[node name="color_rect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="margin_container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="box_container" type="BoxContainer" parent="margin_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="v_box_container" type="VBoxContainer" parent="margin_container/box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="button_change_scene" type="Button" parent="margin_container/box_container/v_box_container"]
+custom_minimum_size = Vector2(154, 54)
+layout_mode = 2
+text = "Change Scene"
+
+[connection signal="pressed" from="margin_container/box_container/v_box_container/button_change_scene" to="." method="_on_button_change_scene_pressed"]
